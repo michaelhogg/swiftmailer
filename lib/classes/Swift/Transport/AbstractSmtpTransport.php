@@ -419,7 +419,8 @@ abstract class Swift_Transport_AbstractSmtpTransport implements Swift_Transport
                 $this->_doRcptToCommand($forwardPath);
                 $sent++;
             } catch (Swift_TransportException $e) {
-                $failedRecipients[] = $forwardPath;
+                // $failedRecipients[] = $forwardPath;
+                throw $e;
             }
         }
 
